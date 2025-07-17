@@ -31,4 +31,15 @@ public class Smartphone extends Prodotto {
     public void setMemoria(int memoria) {
         this.memoria = memoria;
     }
+
+    // apply discount
+    @Override
+    public BigInteger discountedPrice() {
+        if (this.memoria <= 32) {
+            return (getPrezzo().multiply(getIva().add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
+                    .multiply(BigInteger.valueOf(95));
+        }
+        return (getPrezzo().multiply(getIva().add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
+                .multiply(BigInteger.valueOf(98));
+    }
 }

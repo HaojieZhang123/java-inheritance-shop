@@ -33,4 +33,15 @@ public class Cuffie extends Prodotto {
         this.wireless = wireless;
     }
 
+    // apply discount
+    @Override
+    public BigInteger discountedPrice() {
+        if (!this.wireless) {
+            return (getPrezzo().multiply(getIva().add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
+                    .multiply(BigInteger.valueOf(93));
+        }
+        return (getPrezzo().multiply(getIva().add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
+                .multiply(BigInteger.valueOf(98));
+    }
+
 }

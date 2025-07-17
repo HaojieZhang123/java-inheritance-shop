@@ -32,4 +32,15 @@ public class Televisori extends Prodotto {
         this.smartTv = smartTv;
     }
 
+    // apply discount
+    @Override
+    public BigInteger discountedPrice() {
+        if (!this.smartTv) {
+            return (getPrezzo().multiply(getIva().add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
+                    .multiply(BigInteger.valueOf(90));
+        }
+        return (getPrezzo().multiply(getIva().add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
+                .multiply(BigInteger.valueOf(98));
+    }
+
 }

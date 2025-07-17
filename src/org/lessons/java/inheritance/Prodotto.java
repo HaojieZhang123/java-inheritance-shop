@@ -3,11 +3,11 @@ package org.lessons.java.inheritance;
 import java.math.BigInteger;
 
 public class Prodotto {
-    protected int codice;
-    protected String nome;
-    protected String marca;
-    protected BigInteger prezzo;
-    protected BigInteger iva;
+    private int codice;
+    private String nome;
+    private String marca;
+    private BigInteger prezzo;
+    private BigInteger iva;
 
     // constructor
     public Prodotto(int codice, String nome, String marca, BigInteger prezzo, BigInteger iva) {
@@ -32,7 +32,7 @@ public class Prodotto {
     }
 
     public BigInteger getPrezzo() {
-        return prezzo;
+        return prezzo.multiply(iva.add(BigInteger.valueOf(100))).divide(BigInteger.valueOf(100));
     }
 
     public BigInteger getIva() {
@@ -54,6 +54,12 @@ public class Prodotto {
 
     public void setIva(BigInteger iva) {
         this.iva = iva;
+    }
+
+    // apply discount
+    public BigInteger discountedPrice() {
+        return (prezzo.multiply(iva.add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
+                .multiply(BigInteger.valueOf(98));
     }
 
 }
