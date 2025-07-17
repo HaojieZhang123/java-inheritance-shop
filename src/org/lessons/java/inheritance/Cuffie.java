@@ -8,9 +8,9 @@ public class Cuffie extends Prodotto {
     private boolean wireless;
 
     // constructor
-    public Cuffie(int codice, String nome, String marca, BigInteger prezzo, BigInteger iva, String colore,
+    public Cuffie(String nome, String marca, BigInteger prezzo, BigInteger iva, String colore,
             boolean wireless) {
-        super(codice, nome, marca, prezzo, iva);
+        super(nome, marca, prezzo, iva);
         this.colore = colore;
         this.wireless = wireless;
     }

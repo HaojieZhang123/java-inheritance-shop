@@ -7,9 +7,9 @@ public class Televisori extends Prodotto {
     private boolean smartTv;
 
     // constructor
-    public Televisori(int codice, String nome, String marca, BigInteger prezzo, BigInteger iva, int dimensione,
+    public Televisori(String nome, String marca, BigInteger prezzo, BigInteger iva, int dimensione,
             boolean smartTv) {
-        super(codice, nome, marca, prezzo, iva);
+        super(nome, marca, prezzo, iva);
         this.dimensione = dimensione;
         this.smartTv = smartTv;
     }

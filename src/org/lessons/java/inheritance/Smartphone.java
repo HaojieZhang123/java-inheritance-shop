@@ -7,9 +7,9 @@ public class Smartphone extends Prodotto {
     private int memoria;
 
     // constructor
-    public Smartphone(int codice, String nome, String marca, BigInteger prezzo, BigInteger iva, long IMEI,
+    public Smartphone(String nome, String marca, BigInteger prezzo, BigInteger iva, long IMEI,
             int memoria) {
-        super(codice, nome, marca, prezzo, iva);
+        super(nome, marca, prezzo, iva);
         this.IMEI = IMEI;
         this.memoria = memoria;
     }

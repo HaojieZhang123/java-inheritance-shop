@@ -1,6 +1,7 @@
 package org.lessons.java.inheritance;
 
 import java.math.BigInteger;
+import java.util.Random;
 
 public class Prodotto {
     private int codice;
@@ -10,8 +11,8 @@ public class Prodotto {
     private BigInteger iva;
 
     // constructor
-    public Prodotto(int codice, String nome, String marca, BigInteger prezzo, BigInteger iva) {
-        this.codice = codice;
+    public Prodotto(String nome, String marca, BigInteger prezzo, BigInteger iva) {
+        this.codice = new Random().nextInt(100000); // generate a random codice
         this.nome = nome;
         this.marca = marca;
         this.prezzo = prezzo;
@@ -60,6 +61,18 @@ public class Prodotto {
     public BigInteger discountedPrice() {
         return (prezzo.multiply(iva.add(BigInteger.valueOf(100)))).divide(BigInteger.valueOf(10000))
                 .multiply(BigInteger.valueOf(98));
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "codice=" + codice +
+                ", nome='" + nome + '\'' +
+                ", marca='" + marca + '\'' +
+                ", prezzo=" + prezzo +
+                ", iva=" + iva +
+                '}';
     }
 
 }

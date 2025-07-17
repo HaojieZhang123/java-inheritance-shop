@@ -98,8 +98,6 @@ public class Main {
                 while (choice != 4) {
                         switch (choice) {
                                 case 1: {
-                                        System.out.println("Inserisci il codice del prodotto:");
-                                        int codice = in.nextInt();
                                         System.out.println("Inserisci il nome del prodotto:");
                                         String nome = in.next();
                                         System.out.println("Inserisci la marca del prodotto:");
@@ -113,7 +111,7 @@ public class Main {
                                         System.out.println("Inserisci la memoria del prodotto (in GB):");
                                         int memoria = in.nextInt();
 
-                                        Smartphone newPhone = new Smartphone(codice, nome, marca, prezzo, iva, IMEI,
+                                        Smartphone newPhone = new Smartphone(nome, marca, prezzo, iva, IMEI,
                                                         memoria);
                                         carrello.addSmartphone(newPhone);
 
@@ -124,9 +122,6 @@ public class Main {
                                         break;
                                 }
                                 case 2: {
-
-                                        System.out.println("Inserisci il codice del prodotto:");
-                                        int codice = in.nextInt();
                                         System.out.println("Inserisci il nome del prodotto:");
                                         String nome = in.next();
                                         System.out.println("Inserisci la marca del prodotto:");
@@ -140,7 +135,7 @@ public class Main {
                                         System.out.println("Inserisci se il prodotto è Smart TV (true/false):");
                                         boolean smartTv = in.nextBoolean();
 
-                                        Televisori newTV = new Televisori(codice, nome, marca, prezzo, iva, dimensione,
+                                        Televisori newTV = new Televisori(nome, marca, prezzo, iva, dimensione,
                                                         smartTv);
                                         carrello.addTelevisori(newTV);
 
@@ -151,9 +146,6 @@ public class Main {
                                         break;
                                 }
                                 case 3: {
-
-                                        System.out.println("Inserisci il codice del prodotto:");
-                                        int codice = in.nextInt();
                                         System.out.println("Inserisci il nome del prodotto:");
                                         String nome = in.next();
                                         System.out.println("Inserisci la marca del prodotto:");
@@ -167,7 +159,7 @@ public class Main {
                                         System.out.println("Inserisci se il prodotto è wireless (true/false):");
                                         boolean wireless = in.nextBoolean();
 
-                                        Cuffie newCuffia = new Cuffie(codice, nome, marca, prezzo, iva, colore,
+                                        Cuffie newCuffia = new Cuffie(nome, marca, prezzo, iva, colore,
                                                         wireless);
                                         carrello.addCuffie(newCuffia);
 
